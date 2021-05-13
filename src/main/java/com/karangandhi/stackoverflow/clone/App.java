@@ -46,9 +46,11 @@ public class App {
 
     public static void main(String[] args) {
         try {
-            System.out.println(System.getenv("PORT"));
-            PORT = Integer.parseInt(String.valueOf(System.getenv("PORT") == null ? "5000" : System.getenv("PORT")));
-            ServerSocket serverSocket = new ServerSocket(Integer.parseInt(String.valueOf(System.getenv("PORT") == null ? "5000" : System.getenv("PORT"))));
+            // System.out.println(System.getenv("PORT"));
+            // PORT = Integer.parseInt(String.valueOf(System.getenv("PORT") == null ? "5000" : System.getenv("PORT")));
+            System.out.println(args.length);
+            PORT = Integer.parseInt(args[args.length - 1]);
+            ServerSocket serverSocket = new ServerSocket(PORT);
             System.out.println("[ServerSocket] Sucessful connected to port " + PORT);
 
 //            new Thread(() -> {
